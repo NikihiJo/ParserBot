@@ -120,7 +120,7 @@ async def days_handler(callback: CallbackQuery, state: FSMContext):
         if entity is not None:
             channel_name = entity.username
 
-            await parsing(  # ✅ просто await
+            await parsing( 
                 channel_name,
                 offset_date=(datetime.strptime(data['offset_date'], "%Y-%m-%d").date() if data['type'] == "time" else None),
                 limit=(int(data['limit']) if data['type'] == "count" else None)
